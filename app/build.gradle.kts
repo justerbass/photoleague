@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "cl.app.photoleague"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "cl.app.photoleague"
         minSdk = 27
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -59,6 +59,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.play.services.games.v2)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,4 +68,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //  navegacion
+    implementation("androidx.navigation:navigation-compose:2.8.7")
+    implementation("androidx.compose.ui:ui:1.7.8")
 }
