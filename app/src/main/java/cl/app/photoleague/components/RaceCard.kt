@@ -54,7 +54,7 @@ fun RaceCard(race: Races) {
                         .padding(16.dp)
                 )
                 Text(
-                    text = race.grandPrix,
+                    text = race.circuit,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold
                 )

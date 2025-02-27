@@ -1,10 +1,14 @@
 package cl.app.photoleague.view
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -18,13 +22,21 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarColors
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import cl.app.photoleague.Model.Drivers
 import cl.app.photoleague.Model.Teams
+import cl.app.photoleague.components.DriverItem
 import cl.app.photoleague.navigation.BottomNavigationBar
+import cl.app.photoleague.ui.theme.getTeamColors
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,42 +49,80 @@ fun TeamProfile(navController: NavController, team: Teams, category: String) {
         else -> Pair(emptyList(), 0)
     }
 
+    val (primaryColor, secondaryColor) = getTeamColors(team.name)
+
     Scaffold(
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = { Text(team.name) },
-                navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
-                        Icon(Icons.AutoMirrored.Default.ArrowBack, contentDescription = "Volver")
-                    }
-                }
-            )
+        containerColor = Color.Transparent,
+
+        topBar =
+        {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.Transparent)
+                    .statusBarsPadding()
+            ) {
+                CenterAlignedTopAppBar(
+                    title = { Text(team.name, color = Color.White) },
+                    navigationIcon = {
+                        IconButton(onClick = { navController.popBackStack() }) {
+                            Icon(
+                                Icons.AutoMirrored.Default.ArrowBack,
+                                contentDescription = "Volver",
+                                tint = Color.White
+                            )
+                        }
+                    },
+                    colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                        containerColor = Color.Transparent,
+                        scrolledContainerColor = Color.Transparent
+                    )
+                )
+            }
         },
         bottomBar = { BottomNavigationBar(navController) })
 
     { padding ->
 
-        Column(modifier = Modifier
-            .padding(padding)
-            .fillMaxSize()) {
-            Text(
-                text = "Jefe de Equipo: ${team.teamPrincipal}",
-                style = MaterialTheme.typography.headlineSmall,
-                modifier = Modifier.padding(16.dp)
-            )
-            Text(
-                text = "Puntaje en $category: $categoryPoints",
-                style = MaterialTheme.typography.headlineMedium,
-                modifier = Modifier.padding(16.dp)
-            )
-            Text(
-                text = "Pilotos en $category:",
-                style = MaterialTheme.typography.headlineSmall,
-                modifier = Modifier.padding(16.dp)
-            )
-            LazyColumn {
-                items(drivers) { driver ->
-                    DriverItem(driver)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    brush = Brush.linearGradient(
+                        colors = listOf(primaryColor, secondaryColor),
+                        start = Offset(0f, 0f),
+                        end = Offset(1000f, 1000f)
+                    )
+                )
+        ) {
+            Column(
+                modifier = Modifier
+                    .padding(padding)
+                    .padding(16.dp)
+                    .fillMaxSize()
+            ) {
+                Text(
+                    text = "Jefe de Equipo: ${team.teamPrincipal}",
+                    style = MaterialTheme.typography.headlineSmall,
+                    color = Color.White
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    text = "Puntaje en $category: $categoryPoints",
+                    style = MaterialTheme.typography.headlineMedium,
+                    color = Color.White
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    text = "Pilotos en $category:",
+                    style = MaterialTheme.typography.headlineSmall,
+                    color = Color.White
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                LazyColumn {
+                    items(drivers) { driver ->
+                        DriverItem(driver)
+                    }
                 }
             }
         }
@@ -80,20 +130,5 @@ fun TeamProfile(navController: NavController, team: Teams, category: String) {
 
         }
 
-    }
-}
-
-@Composable
-fun DriverItem(driver: Drivers) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = driver.name, style = MaterialTheme.typography.bodyLarge)
-            Text(text = "Puntos: ${driver.points}", style = MaterialTheme.typography.bodyMedium)
-        }
     }
 }

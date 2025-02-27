@@ -10,26 +10,36 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun CategorySelector(selectedCategory: String, onCategorySelected: (String) -> Unit) {
     val categories = listOf("F1 Pro", "F2 Junior", "F3 Academy")
 
+    val categoryColors = mapOf(
+        "F1 Pro" to Color(0xFFE10600),
+        "F2 Junior" to Color(0xFF004267),
+        "F3 Academy" to Color(0xFF7E7E7E)
+    )
+
     Row(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp),
-        horizontalArrangement = Arrangement.SpaceAround
+            .fillMaxWidth(),
+
+        horizontalArrangement = Arrangement.SpaceEvenly
     ) {
         categories.forEach { category ->
             Button(
                 onClick = { onCategorySelected(category) },
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = if (selectedCategory == category) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary
-                )
+                    containerColor = categoryColors[category] ?: Color.Gray,
+                    contentColor = Color.White
+                ),
+                modifier = Modifier.weight(1f).padding(4.dp)
             ) {
-                Text(category)
+                Text(category, fontWeight = FontWeight.Bold)
             }
         }
     }

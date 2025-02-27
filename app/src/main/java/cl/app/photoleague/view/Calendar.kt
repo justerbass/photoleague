@@ -1,5 +1,6 @@
 package cl.app.photoleague.view
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,10 +11,12 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import cl.app.photoleague.components.CategorySelector
 import cl.app.photoleague.components.PromoButton
@@ -32,7 +35,10 @@ fun Calendar(navController: NavController, viewModel: TeamsViewModel){
 
     Scaffold (
         topBar = {
-            CenterAlignedTopAppBar(title = { Text(text = "PhotoLeague Calendario $selectedCategory") })
+            CenterAlignedTopAppBar(title = { Text(text = "PhotoLeague Calendario $selectedCategory") },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = Color(0xFFFFEF00)
+                ))
         },
         bottomBar = { BottomNavigationBar(navController) })
 
@@ -42,6 +48,7 @@ fun Calendar(navController: NavController, viewModel: TeamsViewModel){
             modifier = Modifier
                 .padding(padding)
                 .fillMaxSize()
+                .background(Color(0xFFFFEF00))
         ) {
             PromoButton()
             CategorySelector(selectedCategory, viewModel::selectCategory)

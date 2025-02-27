@@ -9,6 +9,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 
 import androidx.compose.runtime.Composable
@@ -21,13 +22,14 @@ import cl.app.photoleague.R
 
 
 @Composable
-fun BottomNavigationBar(navController: NavController,
-                        backgroundColor: Color = MaterialTheme.colorScheme.primary,) {
+fun BottomNavigationBar(navController: NavController) {
     val items = listOf(Screen.Home, Screen.Calendar, Screen.Standing, Screen.News)
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 
-    NavigationBar {
+    NavigationBar (
+        containerColor = Color(0xFFFFEF00),
+    ){
         items.forEach { screen ->
             NavigationBarItem(
                 icon = {
