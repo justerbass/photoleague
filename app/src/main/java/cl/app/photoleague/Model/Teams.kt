@@ -1,11 +1,12 @@
 package cl.app.photoleague.Model
 
-data class Team(
+data class Teams(
     val id: String,
     val name: String,
-    val f1Drivers: List<Driver>,
-    val f2Drivers: List<Driver>,
-    val f3Drivers: List<Driver>
+    val teamPrincipal: String,
+    val f1Drivers: List<Drivers>,
+    val f2Drivers: List<Drivers>,
+    val f3Drivers: List<Drivers>
 ) {
     val f1Points: Int
         get() = f1Drivers.sumOf { it.points }

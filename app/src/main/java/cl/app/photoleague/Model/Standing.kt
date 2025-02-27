@@ -1,14 +1,14 @@
 package cl.app.photoleague.Model
 
-data class Standings(
+data class Standing(
     val category: String,
-    val teams: List<Team>
+    val teams: List<Teams>
 ){
-    val sortedTeams: List<Team>
+    val sortedTeams: List<Teams>
         get() = when (category) {
-            "F1" -> teams.sortedByDescending { it.f1Points }
-            "F2" -> teams.sortedByDescending { it.f2Points }
-            "F3" -> teams.sortedByDescending { it.f3Points }
+            "F1 Pro" -> teams.sortedByDescending { it.f1Points }
+            "F2 Junior" -> teams.sortedByDescending { it.f2Points }
+            "F3 Academy" -> teams.sortedByDescending { it.f3Points }
             else -> emptyList()
         }
 }
