@@ -6,5 +6,6 @@ data class Races(
     val circuit: String,
     val grandPrix: String,
     val date: String,
-    val circuitImageRes: Int
+    val circuitImageRes: Int,
+    val flagImageRes: Int
 )

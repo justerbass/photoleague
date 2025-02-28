@@ -8,29 +8,29 @@ import cl.app.photoleague.R
 object DataSource {
 
     private val f1Drivers = listOf(
-        Drivers(1, "Hugo Wulf", "FER", "F1", 0),
-        Drivers(2, "FFuuNNeeSS", "FER", "F1", 0),
-        Drivers(3, "Cristina Pérez", "RB", "F1", 0),
-        Drivers(4, "Felix Redondo (redonares)", "RB", "F1", 0),
+        Drivers(1, "Hugo Wulf", "FER", "F1", 30),
+        Drivers(2, "FFuuNNeeSS", "FER", "F1", 1),
+        Drivers(3, "Cristina Pérez", "RB", "F1", 16),
+        Drivers(4, "Felix Redondo (redonares)", "RB", "F1", 12),
         Drivers(5, "Fran Romero Lázaro", "MCL", "F1", 0),
         Drivers(6, "alvaro inchausti", "MCL", "F1", 0),
-        Drivers(7, "Diego Fernandez", "WIL", "F1", 0),
+        Drivers(7, "Diego Fernandez", "WIL", "F1", 28),
         Drivers(8, "Alex Puertas", "WIL", "F1", 0),
         Drivers(9, "Pau Armemesto / ARMEMES", "AS", "F1", 0),
-        Drivers(10, "Iván Pérez | NanoMosca", "AS", "F1", 0),
+        Drivers(10, "Iván Pérez | NanoMosca", "AS", "F1", 8),
         Drivers(11, "Miguel Angel Gutierrez Estevez2", "HAS", "F1", 0),
-        Drivers(12, "Tony_tgn", "HAS", "F1", 0),
-        Drivers(13, "Raúl Martín", "REN", "F1", 0),
+        Drivers(12, "Tony_tgn", "HAS", "F1", 5),
+        Drivers(13, "Raúl Martín", "REN", "F1", 18),
         Drivers(14, "McSabroson", "REN", "F1", 0),
-        Drivers(15, "xurde", "MER", "F1", 0),
+        Drivers(15, "xurde", "MER", "F1", 10),
         Drivers(16, "Abel Sánchez", "MER", "F1", 0),
         Drivers(17, "Marc de Fulgencio", "RBS", "F1", 0),
-        Drivers(18, "Tejerinhoo", "RBS", "F1", 0),
-        Drivers(19, "izan_asecas", "KS", "F1", 0),
-        Drivers(20, "Tomas Gonzalez Lo", "KS", "F1", 0),
-        Drivers(21, "PhotoRacerTV", "JOR", "F1", 0),
-        Drivers(22, "f1mproplayer", "JOR", "F1", 0),
-        Drivers(23, "Axel Vilar (Mr Phoskitos)", "BRW", "F1", 0),
+        Drivers(18, "Tejerinhoo", "RBS", "F1", 6),
+        Drivers(19, "izan_asecas", "KS", "F1", 14),
+        Drivers(20, "Tomas Gonzalez Lo", "KS", "F1", 22),
+        Drivers(21, "PhotoRacerTV", "JOR", "F1", 3),
+        Drivers(22, "f1mproplayer", "JOR", "F1", 4),
+        Drivers(23, "Axel Vilar (Mr Phoskitos)", "BRW", "F1", 2),
         Drivers(24, "Antonio Ridao(Ridmar)", "BRW", "F1", 0)
     )
 
@@ -40,9 +40,9 @@ object DataSource {
         Drivers(3, "Matias Cunial", "FER", "F2", 0),
         Drivers(4, "Eder Goros", "RB", "F2", 0),
         Drivers(5, "Alesander Rodrigo", "RB", "F2", 0),
-        Drivers(6, "Adrián Fariñas Rodríguez", "RB", "F2", 0),
+        Drivers(6, "Adrián Fariñas Rodríguez", "RB", "F2", 26),
         Drivers(7, "Arteom Tambur", "MCL", "F2", 0),
-        Drivers(8, "Aitor Galbarriartu", "MCL", "F2", 0),
+        Drivers(8, "Aitor Galbarriartu", "MCL", "F2", 12),
         Drivers(9, "Gustavo Gutiérrez", "MCL", "F2", 0),
         Drivers(10, "Rubén Iglesias Cotelo", "WIL", "F2", 0),
         Drivers(11, "Rubén Rodríguez Cueto", "WIL", "F2", 0),
@@ -51,25 +51,25 @@ object DataSource {
         Drivers(14, "Ángel Trinidad De Haro", "AS", "F2", 0),
         Drivers(15, "Adri Casado", "AS", "F2", 0),
         Drivers(16, "Héctor Pérez", "HAS", "F2", 0),
-        Drivers(17, "Álvaro Fernández", "HAS", "F2", 0),
+        Drivers(17, "Álvaro Fernández", "HAS", "F2", 31),
         Drivers(18, "Marcos Argibay", "HAS", "F2", 0),
-        Drivers(19, "Daniel Pumar", "REN", "F2", 0),
+        Drivers(19, "Daniel Pumar", "REN", "F2", 2),
         Drivers(20, "Maria Primo Leal", "REN", "F2", 0),
-        Drivers(21, "Adrian Dominguez", "REN", "F2", 0),
+        Drivers(21, "Adrian Dominguez", "REN", "F2", 16),
         Drivers(22, "Saul Ardura", "MER", "F2", 0),
         Drivers(23, "Javier Linares Hernandez", "MER", "F2", 0),
-        Drivers(24, "Josu Leciñana", "MER", "F2", 0),
+        Drivers(24, "Josu Leciñana", "MER", "F2", 18),
         Drivers(25, "Mariano Quilez", "RBS", "F2", 0),
         Drivers(26, "Francisco Cadenas Ruiz", "RBS", "F2", 0),
         Drivers(27, "David Hernández Leciñana", "RBS", "F2", 0),
-        Drivers(28, "Asier López Lobato", "KS", "F2", 0),
+        Drivers(28, "Asier López Lobato", "KS", "F2", 4),
         Drivers(29, "Marc Martínez Mascarell", "KS", "F2", 0),
-        Drivers(30, "Guillem Musarro", "KS", "F2", 0),
+        Drivers(30, "Guillem Musarro", "KS", "F2", 10),
         Drivers(31, "Alejandro Guerrero", "JOR", "F2", 0),
         Drivers(32, "Alberto Gallardo Aviles", "JOR", "F2", 0),
-        Drivers(33, "Ignacio Rodríguez", "JOR", "F2", 0),
+        Drivers(33, "Ignacio Rodríguez", "JOR", "F2", 8),
         Drivers(34, "Adrian Cespedes Gomez", "BRW", "F2", 0),
-        Drivers(35, "Felipe Solari", "BRW", "F2", 0),
+        Drivers(35, "Felipe Solari", "BRW", "F2", 15),
         Drivers(36, "Oriol Montoy", "BRW", "F2", 0)
     )
 
@@ -205,21 +205,24 @@ object DataSource {
             "Circuitro de Virginia",
             "Gran Premio de EEUU",
             "27-02-2025",
-            R.drawable.virginia
+            R.drawable.virginia,
+            R.drawable.flag_of_the_united_states
         ),
         Races(
             "F2 Junior",
             "Circuitro de Virginia",
             "Gran Premio de EEUU",
             "27-02-2025",
-            R.drawable.virginia
+            R.drawable.virginia,
+            R.drawable.flag_of_the_united_states
         ),
         Races(
             "F3 Academy",
             "Circuitro de Laguna Seca",
             "Gran Premio de EEUU",
             "26-02-2025",
-            R.drawable.laguna_seca
+            R.drawable.laguna_seca,
+            R.drawable.flag_of_the_united_states
         ),
 
         Races(
@@ -227,21 +230,24 @@ object DataSource {
             "Circuitro de Catalunya",
             "Gran Premio de España",
             "06-03-2025",
-            R.drawable.catalunya
+            R.drawable.catalunya,
+            R.drawable.bandera_nacional_de_espana
         ),
         Races(
             "F2 Junior",
             "Circuitro de Catalunya",
             "Gran Premio de España",
             "06-03-2025",
-            R.drawable.catalunya
+            R.drawable.catalunya,
+            R.drawable.bandera_nacional_de_espana
         ),
         Races(
             "F3 Academy",
             "Circuitro de Navarra",
             "Gran Premio de España",
             "05-03-2025",
-            R.drawable.navarra
+            R.drawable.navarra,
+            R.drawable.bandera_nacional_de_espana
         ),
 
         Races(
@@ -249,21 +255,24 @@ object DataSource {
             "Circuitro de Okayama",
             "Gran Premio del Pacífico",
             "13-03-2025",
-            R.drawable.okayama
+            R.drawable.okayama,
+            R.drawable.flag_of_pacific
         ),
         Races(
             "F2 Junior",
             "Circuitro de Okayama",
             "Gran Premio del Pacífico",
             "13-03-2025",
-            R.drawable.okayama
+            R.drawable.okayama,
+            R.drawable.flag_of_pacific
         ),
         Races(
             "F3 Academy",
             "Circuitro de Oran Park",
             "Gran Premio del Pacífico",
             "12-03-2025",
-            R.drawable.oran_park
+            R.drawable.oran_park,
+            R.drawable.flag_of_pacific
         ),
 
         Races(
@@ -271,21 +280,24 @@ object DataSource {
             "Circuitro de Silverstone",
             "Gran Premio de Gran Bretaña",
             "20-03-2025",
-            R.drawable.silverstone
+            R.drawable.silverstone,
+            R.drawable.flag_of_the_united_kingdom
         ),
         Races(
             "F2 Junior",
             "Circuitro de Silverstone",
             "Gran Premio de Gran Bretaña",
             "20-03-2025",
-            R.drawable.silverstone
+            R.drawable.silverstone,
+            R.drawable.flag_of_the_united_kingdom
         ),
         Races(
             "F3 Academy",
             "Circuitro de Silverstone",
             "Gran Premio de Gran Bretaña",
             "19-03-2025",
-            R.drawable.silverstone
+            R.drawable.silverstone,
+            R.drawable.flag_of_the_united_kingdom
         ),
 
         Races(
@@ -293,21 +305,24 @@ object DataSource {
             "Circuitro de Nurburgring",
             "Gran Premio de Alemania",
             "27-03-2025",
-            R.drawable.nurburgring
+            R.drawable.nurburgring,
+            R.drawable.flag_of_germany
         ),
         Races(
             "F2 Junior",
             "Circuitro de Nurburgring",
             "Gran Premio de Alemania",
             "27-03-2025",
-            R.drawable.nurburgring
+            R.drawable.nurburgring,
+            R.drawable.flag_of_germany
         ),
         Races(
             "F3 Academy",
             "Circuitro de Orschersleben",
             "Gran Premio de Alemania",
             "26-03-2025",
-            R.drawable.orschersleben
+            R.drawable.orschersleben,
+            R.drawable.flag_of_germany
         ),
 
         Races(
@@ -315,21 +330,24 @@ object DataSource {
             "Circuitro de Spa-Francorchams",
             "Gran Premio de Bélgica",
             "03-04-2025",
-            R.drawable.spa_francorchamps
+            R.drawable.spa_francorchamps,
+            R.drawable.flag_of_belgium
         ),
         Races(
             "F2 Junior",
             "Circuitro de Spa-Francorchams",
             "Gran Premio de Bélgica",
             "03-04-2025",
-            R.drawable.spa_francorchamps
+            R.drawable.spa_francorchamps,
+            R.drawable.flag_of_belgium
         ),
         Races(
             "F3 Academy",
             "Circuitro de Spa-Francorchams",
             "Gran Premio de Bélgica",
             "02-04-2025",
-            R.drawable.spa_francorchamps
+            R.drawable.spa_francorchamps,
+            R.drawable.flag_of_belgium
         ),
     )
 }
