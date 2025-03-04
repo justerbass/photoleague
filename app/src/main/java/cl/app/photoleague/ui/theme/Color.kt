@@ -46,6 +46,9 @@ val JordanSecondary = Color.Black
 val BrawnPrimary = Color(0xFFCEDC00)
 val BrawnSecondary = Color.White
 
+val SimufyPrimary = Color(0xFFff5730)
+val SimufySecondary = Color(0xFFe0e0d4)
+
 fun getTeamColors(teamName: String): Pair<Color, Color> {
     return when (teamName) {
         "Ferrari" -> Pair(FerrariPrimary, FerrariSecondary)
@@ -60,6 +63,7 @@ fun getTeamColors(teamName: String): Pair<Color, Color> {
         "Kick Sauber" -> Pair(KickSauberPrimary, KickSauberSecondary)
         "Jordan" -> Pair(JordanPrimary, JordanSecondary)
         "Brawn" -> Pair(BrawnPrimary, BrawnSecondary)
+        "Simufy Wildcard" -> Pair(SimufyPrimary, SimufySecondary)
         else -> Pair(Color.Gray, Color.DarkGray) // Colores por defecto
     }
 }
