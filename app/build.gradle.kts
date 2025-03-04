@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -47,6 +49,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    kapt{
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -72,4 +78,15 @@ dependencies {
     //  navegacion
     implementation("androidx.navigation:navigation-compose:2.8.7")
     implementation("androidx.compose.ui:ui:1.7.8")
+
+    //  gson
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+
+    //  retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+
+    //  Hilt
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 }

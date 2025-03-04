@@ -10,11 +10,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import cl.app.photoleague.Model.Drivers
+import cl.app.photoleague.Model.Entry
 
 
 @Composable
-fun DriverItem(driver: Drivers) {
+fun DriverItem(driver: Entry, points: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -22,8 +22,8 @@ fun DriverItem(driver: Drivers) {
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = driver.name, style = MaterialTheme.typography.bodyLarge)
-            Text(text = "Puntos: ${driver.points}", style = MaterialTheme.typography.bodyMedium)
+            Text(text = driver.piloto_nombre, style = MaterialTheme.typography.bodyLarge)
+            Text(text = "Puntos: $points", style = MaterialTheme.typography.bodyMedium)
         }
     }
 }

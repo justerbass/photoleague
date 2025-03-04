@@ -46,6 +46,7 @@ fun HomeScreen(navController: NavController, viewModel: TeamsViewModel) {
     val selectedCategory by viewModel.selectedCategory.collectAsState()
     val teams by viewModel.teams.collectAsState()
 
+
     Scaffold(
 
         topBar = {
@@ -56,7 +57,7 @@ fun HomeScreen(navController: NavController, viewModel: TeamsViewModel) {
                 )
             )
         },
-        bottomBar = { BottomNavigationBar(navController)},
+        bottomBar = { BottomNavigationBar(navController) },
 
         ) { padding ->
 
@@ -69,15 +70,20 @@ fun HomeScreen(navController: NavController, viewModel: TeamsViewModel) {
             PromoButton()
             CategorySelector(selectedCategory, viewModel::selectCategory)
             StreamButton()
-            LazyColumn {
-                items(teams) { team ->
-
-                    val (primaryColor, secondaryColor) = getTeamColors(team.name)
-
-                    TeamItem(team, primaryColor, secondaryColor) {
-                        navController.navigate(Screen.TeamProfile.route + "/${team.name}/$selectedCategory")
+            if (selectedCategory.isNotBlank()) {
+                LazyColumn {
+                    items(teams) { team ->
+                        val (primaryColor, secondaryColor) = getTeamColors(team.name)
+                        TeamItem(team, primaryColor, secondaryColor) {
+                            navController.navigate(Screen.TeamProfile.route + "/${team.name}/$selectedCategory")
+                        }
                     }
                 }
+            } else {
+                Text(
+                    text = "Seleccione una categoría para ver la información",
+                    modifier = Modifier.padding(16.dp)
+                )
             }
         }
         Box(modifier = Modifier.padding(padding)) {
