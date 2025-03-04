@@ -28,7 +28,7 @@ fun CategorySelector(selectedCategory: String, onCategorySelected: (String) -> U
         modifier = Modifier
             .fillMaxWidth(),
 
-        horizontalArrangement = Arrangement.SpaceEvenly
+        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         categories.forEach { category ->
             Button(

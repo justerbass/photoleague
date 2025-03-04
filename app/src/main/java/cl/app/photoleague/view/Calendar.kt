@@ -17,6 +17,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import cl.app.photoleague.components.CategorySelector
 import cl.app.photoleague.components.PromoButton
@@ -28,21 +29,23 @@ import cl.app.photoleague.viewModel.TeamsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Calendar(navController: NavController, viewModel: TeamsViewModel){
+fun Calendar(navController: NavController, viewModel: TeamsViewModel) {
 
     val selectedCategory by viewModel.selectedCategory.collectAsState()
     val races = viewModel.getRacesByCategory(selectedCategory)
 
-    Scaffold (
+    Scaffold(
         topBar = {
-            CenterAlignedTopAppBar(title = { Text(text = "PhotoLeague Calendario $selectedCategory") },
+            CenterAlignedTopAppBar(
+                title = { Text(text = "PhotoLeague Calendario $selectedCategory") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color(0xFFFFEF00)
-                ))
+                )
+            )
         },
         bottomBar = { BottomNavigationBar(navController) })
 
-    {   padding ->
+    { padding ->
 
         Column(
             modifier = Modifier
@@ -53,14 +56,22 @@ fun Calendar(navController: NavController, viewModel: TeamsViewModel){
             PromoButton()
             CategorySelector(selectedCategory, viewModel::selectCategory)
             StreamButton()
-            LazyColumn(modifier = Modifier.fillMaxSize()) {
-                items(races) { race ->
-                    RaceCard(race = race)
+
+            if (selectedCategory.isNotBlank()) {
+                LazyColumn(modifier = Modifier.fillMaxSize()) {
+                    items(races) { race ->
+                        RaceCard(race = race)
+                    }
                 }
+            } else {
+                Text(
+                    text = "Seleccione una categoría para ver la información",
+                    modifier = Modifier.padding(16.dp)
+                )
             }
         }
 
-        Box(modifier = Modifier.padding(padding)){
+        Box(modifier = Modifier.padding(padding)) {
 
         }
 

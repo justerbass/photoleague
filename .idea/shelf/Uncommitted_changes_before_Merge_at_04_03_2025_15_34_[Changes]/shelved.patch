@@ -1,0 +1,180 @@
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    alias(libs.plugins.android.application)\r\n    alias(libs.plugins.jetbrains.kotlin.android)\r\n}\r\n\r\nandroid {\r\n    namespace = \"cl.app.photoleague\"\r\n    compileSdk = 35\r\n\r\n    defaultConfig {\r\n        applicationId = \"cl.app.photoleague\"\r\n        minSdk = 27\r\n        targetSdk = 35\r\n        versionCode = 3\r\n        versionName = \"1.0\"\r\n\r\n        testInstrumentationRunner = \"androidx.test.runner.AndroidJUnitRunner\"\r\n        vectorDrawables {\r\n            useSupportLibrary = true\r\n        }\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            isMinifyEnabled = false\r\n            proguardFiles(\r\n                getDefaultProguardFile(\"proguard-android-optimize.txt\"),\r\n                \"proguard-rules.pro\"\r\n            )\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility = JavaVersion.VERSION_1_8\r\n        targetCompatibility = JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = \"1.8\"\r\n    }\r\n    buildFeatures {\r\n        compose = true\r\n    }\r\n    composeOptions {\r\n        kotlinCompilerExtensionVersion = \"1.5.1\"\r\n    }\r\n    packaging {\r\n        resources {\r\n            excludes += \"/META-INF/{AL2.0,LGPL2.1}\"\r\n        }\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation(libs.androidx.core.ktx)\r\n    implementation(libs.androidx.lifecycle.runtime.ktx)\r\n    implementation(libs.androidx.activity.compose)\r\n    implementation(platform(libs.androidx.compose.bom))\r\n    implementation(libs.androidx.ui)\r\n    implementation(libs.androidx.ui.graphics)\r\n    implementation(libs.androidx.ui.tooling.preview)\r\n    implementation(libs.androidx.material3)\r\n    implementation(libs.androidx.navigation.compose)\r\n    implementation(libs.play.services.games.v2)\r\n    testImplementation(libs.junit)\r\n    androidTestImplementation(libs.androidx.junit)\r\n    androidTestImplementation(libs.androidx.espresso.core)\r\n    androidTestImplementation(platform(libs.androidx.compose.bom))\r\n    androidTestImplementation(libs.androidx.ui.test.junit4)\r\n    debugImplementation(libs.androidx.ui.tooling)\r\n    debugImplementation(libs.androidx.ui.test.manifest)\r\n\r\n    //  navegacion\r\n    implementation(\"androidx.navigation:navigation-compose:2.8.7\")\r\n    implementation(\"androidx.compose.ui:ui:1.7.8\")\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+--- a/app/build.gradle.kts	(revision 2ebde3b8da2d361b315b3b8a1178b4027f7a5c12)
++++ b/app/build.gradle.kts	(date 1741113196497)
+@@ -11,8 +11,8 @@
+         applicationId = "cl.app.photoleague"
+         minSdk = 27
+         targetSdk = 35
+-        versionCode = 3
+-        versionName = "1.0"
++        versionCode = 4
++        versionName = "1.10"
+ 
+         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+         vectorDrawables {
+@@ -72,4 +72,6 @@
+     //  navegacion
+     implementation("androidx.navigation:navigation-compose:2.8.7")
+     implementation("androidx.compose.ui:ui:1.7.8")
++
++
+ }
+\ No newline at end of file
+Index: app/src/main/java/cl/app/photoleague/ui/theme/Color.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.app.photoleague.ui.theme\r\n\r\nimport androidx.compose.ui.graphics.Color\r\n\r\nval Purple80 = Color(0xFFD0BCFF)\r\nval PurpleGrey80 = Color(0xFFCCC2DC)\r\nval Pink80 = Color(0xFFEFB8C8)\r\n\r\nval Purple40 = Color(0xFF6650a4)\r\nval PurpleGrey40 = Color(0xFF625b71)\r\nval Pink40 = Color(0xFF7D5260)\r\n\r\nval FerrariPrimary = Color(0xFFDC0000)\r\nval FerrariSecondary = Color(0xFFFF2800)\r\n\r\nval RedBullPrimary = Color(0xFF0033A0)\r\nval RedBullSecondary = Color(0xFFDA291C)\r\n\r\nval McLarenPrimary = Color(0xFFFF8700)\r\nval McLarenSecondary = Color(0xFFFFB700)\r\n\r\nval WilliamsPrimary = Color(0xFF041E42)\r\nval WilliamsSecondary = Color(0xFF0082FA)\r\n\r\nval AstonMartinPrimary = Color(0xFF006F62)\r\nval AstonMartinSecondary = Color(0xFF00A499)\r\n\r\nval HaasPrimary = Color(0xFFE10600)\r\nval HaasSecondary = Color.Black\r\n\r\nval RenaultPrimary = Color(0xFF0E88D3)\r\nval RenaultSecondary = Color(0xFFFFD700)\r\n\r\nval MercedesPrimary = Color(0xFF6CD3BF)\r\nval MercedesSecondary = Color(0xFF1E1E1E)\r\n\r\nval RacingBullsPrimary = Color(0xFF1E41FF)\r\nval RacingBullsSecondary = Color(0xFFFFD700)\r\n\r\nval KickSauberPrimary = Color(0xFF00E701)\r\nval KickSauberSecondary = Color(0xFF0B0E0F)\r\n\r\nval JordanPrimary = Color(0xFFFFD700)\r\nval JordanSecondary = Color.Black\r\n\r\nval BrawnPrimary = Color(0xFFCEDC00)\r\nval BrawnSecondary = Color.White\r\n\r\nfun getTeamColors(teamName: String): Pair<Color, Color> {\r\n    return when (teamName) {\r\n        \"Ferrari\" -> Pair(FerrariPrimary, FerrariSecondary)\r\n        \"Red Bull\" -> Pair(RedBullPrimary, RedBullSecondary)\r\n        \"McLaren\" -> Pair(McLarenPrimary, McLarenSecondary)\r\n        \"Williams\" -> Pair(WilliamsPrimary, WilliamsSecondary)\r\n        \"Aston Martin\" -> Pair(AstonMartinPrimary, AstonMartinSecondary)\r\n        \"Haas\" -> Pair(HaasPrimary, HaasSecondary)\r\n        \"Renault\" -> Pair(RenaultPrimary, RenaultSecondary)\r\n        \"Mercedes\" -> Pair(MercedesPrimary, MercedesSecondary)\r\n        \"Racing Bulls\" -> Pair(RacingBullsPrimary, RacingBullsSecondary)\r\n        \"Kick Sauber\" -> Pair(KickSauberPrimary, KickSauberSecondary)\r\n        \"Jordan\" -> Pair(JordanPrimary, JordanSecondary)\r\n        \"Brawn\" -> Pair(BrawnPrimary, BrawnSecondary)\r\n        else -> Pair(Color.Gray, Color.DarkGray) // Colores por defecto\r\n    }\r\n}\r\n\r\nval canary = Color(0xFFFFEF00)\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/cl/app/photoleague/ui/theme/Color.kt b/app/src/main/java/cl/app/photoleague/ui/theme/Color.kt
+--- a/app/src/main/java/cl/app/photoleague/ui/theme/Color.kt	(revision 2ebde3b8da2d361b315b3b8a1178b4027f7a5c12)
++++ b/app/src/main/java/cl/app/photoleague/ui/theme/Color.kt	(date 1741113196501)
+@@ -46,6 +46,9 @@
+ val BrawnPrimary = Color(0xFFCEDC00)
+ val BrawnSecondary = Color.White
+ 
++val SimufyPrimary = Color(0xFFff5730)
++val SimufySecondary = Color(0xFFe0e0d4)
++
+ fun getTeamColors(teamName: String): Pair<Color, Color> {
+     return when (teamName) {
+         "Ferrari" -> Pair(FerrariPrimary, FerrariSecondary)
+@@ -60,6 +63,7 @@
+         "Kick Sauber" -> Pair(KickSauberPrimary, KickSauberSecondary)
+         "Jordan" -> Pair(JordanPrimary, JordanSecondary)
+         "Brawn" -> Pair(BrawnPrimary, BrawnSecondary)
++        "Simufy Wildcard" -> Pair(SimufyPrimary, SimufySecondary)
+         else -> Pair(Color.Gray, Color.DarkGray) // Colores por defecto
+     }
+ }
+Index: app/src/main/java/cl/app/photoleague/ui/theme/Type.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.app.photoleague.ui.theme\r\n\r\nimport androidx.compose.material3.Typography\r\nimport androidx.compose.ui.text.TextStyle\r\nimport androidx.compose.ui.text.font.FontFamily\r\nimport androidx.compose.ui.text.font.FontWeight\r\nimport androidx.compose.ui.unit.sp\r\n\r\n// Set of Material typography styles to start with\r\nval Typography = Typography(\r\n    bodyLarge = TextStyle(\r\n        fontFamily = FontFamily.Default,\r\n        fontWeight = FontWeight.Normal,\r\n        fontSize = 16.sp,\r\n        lineHeight = 24.sp,\r\n        letterSpacing = 0.5.sp\r\n    )\r\n    /* Other default text styles to override\r\n    titleLarge = TextStyle(\r\n        fontFamily = FontFamily.Default,\r\n        fontWeight = FontWeight.Normal,\r\n        fontSize = 22.sp,\r\n        lineHeight = 28.sp,\r\n        letterSpacing = 0.sp\r\n    ),\r\n    labelSmall = TextStyle(\r\n        fontFamily = FontFamily.Default,\r\n        fontWeight = FontWeight.Medium,\r\n        fontSize = 11.sp,\r\n        lineHeight = 16.sp,\r\n        letterSpacing = 0.5.sp\r\n    )\r\n    */\r\n)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/cl/app/photoleague/ui/theme/Type.kt b/app/src/main/java/cl/app/photoleague/ui/theme/Type.kt
+--- a/app/src/main/java/cl/app/photoleague/ui/theme/Type.kt	(revision 2ebde3b8da2d361b315b3b8a1178b4027f7a5c12)
++++ b/app/src/main/java/cl/app/photoleague/ui/theme/Type.kt	(date 1741113196505)
+@@ -6,7 +6,6 @@
+ import androidx.compose.ui.text.font.FontWeight
+ import androidx.compose.ui.unit.sp
+ 
+-// Set of Material typography styles to start with
+ val Typography = Typography(
+     bodyLarge = TextStyle(
+         fontFamily = FontFamily.Default,
+@@ -15,20 +14,4 @@
+         lineHeight = 24.sp,
+         letterSpacing = 0.5.sp
+     )
+-    /* Other default text styles to override
+-    titleLarge = TextStyle(
+-        fontFamily = FontFamily.Default,
+-        fontWeight = FontWeight.Normal,
+-        fontSize = 22.sp,
+-        lineHeight = 28.sp,
+-        letterSpacing = 0.sp
+-    ),
+-    labelSmall = TextStyle(
+-        fontFamily = FontFamily.Default,
+-        fontWeight = FontWeight.Medium,
+-        fontSize = 11.sp,
+-        lineHeight = 16.sp,
+-        letterSpacing = 0.5.sp
+-    )
+-    */
+ )
+\ No newline at end of file
+Index: app/src/main/java/cl/app/photoleague/ui/theme/Theme.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cl.app.photoleague.ui.theme\r\n\r\nimport android.app.Activity\r\nimport android.os.Build\r\nimport androidx.compose.foundation.isSystemInDarkTheme\r\nimport androidx.compose.material3.MaterialTheme\r\nimport androidx.compose.material3.darkColorScheme\r\nimport androidx.compose.material3.dynamicDarkColorScheme\r\nimport androidx.compose.material3.dynamicLightColorScheme\r\nimport androidx.compose.material3.lightColorScheme\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.platform.LocalContext\r\n\r\nprivate val DarkColorScheme = darkColorScheme(\r\n    primary = Purple80,\r\n    secondary = PurpleGrey80,\r\n    tertiary = Pink80\r\n)\r\n\r\nprivate val LightColorScheme = lightColorScheme(\r\n    primary = Purple40,\r\n    secondary = PurpleGrey40,\r\n    tertiary = Pink40 ,\r\n    background = canary\r\n\r\n    /* Other default colors to override\r\n    background = Color(0xFFFFFBFE),\r\n    surface = Color(0xFFFFFBFE),\r\n    onPrimary = Color.White,\r\n    onSecondary = Color.White,\r\n    onTertiary = Color.White,\r\n    onBackground = Color(0xFF1C1B1F),\r\n    onSurface = Color(0xFF1C1B1F),\r\n    */\r\n)\r\n\r\n@Composable\r\nfun PhotoLeagueTheme(\r\n    darkTheme: Boolean = isSystemInDarkTheme(),\r\n    // Dynamic color is available on Android 12+\r\n    dynamicColor: Boolean = false,\r\n    content: @Composable () -> Unit\r\n) {\r\n    val colorScheme = when {\r\n        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {\r\n            val context = LocalContext.current\r\n            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)\r\n        }\r\n\r\n        darkTheme -> LightColorScheme\r\n        else -> LightColorScheme\r\n    }\r\n\r\n    MaterialTheme(\r\n        colorScheme = colorScheme,\r\n        typography = Typography,\r\n        content = content\r\n    )\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/cl/app/photoleague/ui/theme/Theme.kt b/app/src/main/java/cl/app/photoleague/ui/theme/Theme.kt
+--- a/app/src/main/java/cl/app/photoleague/ui/theme/Theme.kt	(revision 2ebde3b8da2d361b315b3b8a1178b4027f7a5c12)
++++ b/app/src/main/java/cl/app/photoleague/ui/theme/Theme.kt	(date 1741113196508)
+@@ -9,51 +9,29 @@
+ import androidx.compose.material3.dynamicLightColorScheme
+ import androidx.compose.material3.lightColorScheme
+ import androidx.compose.runtime.Composable
++import androidx.compose.ui.graphics.Color
+ import androidx.compose.ui.platform.LocalContext
+ 
+-private val DarkColorScheme = darkColorScheme(
+-    primary = Purple80,
+-    secondary = PurpleGrey80,
+-    tertiary = Pink80
+-)
+-
+-private val LightColorScheme = lightColorScheme(
+-    primary = Purple40,
+-    secondary = PurpleGrey40,
+-    tertiary = Pink40 ,
+-    background = canary
+-
+-    /* Other default colors to override
+-    background = Color(0xFFFFFBFE),
+-    surface = Color(0xFFFFFBFE),
+-    onPrimary = Color.White,
+-    onSecondary = Color.White,
+-    onTertiary = Color.White,
+-    onBackground = Color(0xFF1C1B1F),
+-    onSurface = Color(0xFF1C1B1F),
+-    */
+-)
+-
+ @Composable
+-fun PhotoLeagueTheme(
+-    darkTheme: Boolean = isSystemInDarkTheme(),
+-    // Dynamic color is available on Android 12+
+-    dynamicColor: Boolean = false,
+-    content: @Composable () -> Unit
+-) {
+-    val colorScheme = when {
+-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+-            val context = LocalContext.current
+-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+-        }
+-
+-        darkTheme -> LightColorScheme
+-        else -> LightColorScheme
+-    }
+-
++fun PhotoLeagueTheme(content: @Composable () -> Unit) {
+     MaterialTheme(
+-        colorScheme = colorScheme,
++        colorScheme = AppColorScheme,
+         typography = Typography,
+         content = content
+     )
+-}
+\ No newline at end of file
++}
++
++private val AppColorScheme = lightColorScheme(
++    primary = FerrariPrimary,
++    secondary = canary,
++    tertiary = Pink40,
++    background = canary,
++    surface = Color.White,
++    onPrimary = Color.White,
++    onSecondary = Color.Black,
++    onTertiary = Color.Black,
++    onBackground = Color.Black,
++    onSurface = Color.Black,
++    error = Color.Red,
++    onError = Color.White
++)
+\ No newline at end of file

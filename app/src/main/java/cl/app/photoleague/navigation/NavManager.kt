@@ -42,11 +42,10 @@ fun NavManager(viewModel: TeamsViewModel){
             val teamName = backStackEntry.arguments?.getString("teamName") ?: ""
             val category = backStackEntry.arguments?.getString("category") ?: ""
 
-            // Buscar el equipo en el ViewModel
             val team = viewModel.getTeamByName(teamName)
 
             if (team != null) {
-                TeamProfile(navController = navControler, team = team, category = category)
+                TeamProfile(navController = navControler, team = team, category = category, viewModel)
             } else {
                 Text("Error: Equipo no encontrado")
             }

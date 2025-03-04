@@ -37,15 +37,15 @@ fun RaceCard(race: Races) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(300.dp) // Ajusta la altura según necesites
+                .height(300.dp)
         ) {
-            // Imagen de fondo (Bandera del país)
+
             Image(
                 painter = painterResource(id = race.flagImageRes),
                 contentDescription = "Bandera de ${race.grandPrix}",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.matchParentSize(),
-                alpha = 0.2f // Opacidad para mejorar la visibilidad del texto
+                alpha = 0.2f
             )
 
             Column(

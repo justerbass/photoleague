@@ -22,7 +22,7 @@ import cl.app.photoleague.R
 fun PromoButton() {
     val context = LocalContext.current
     val sponsorUrl =
-        "https://simufy.com/?sca_ref=5427618.iHB2Jjourw&utm_source=afiliados&utm_medium=photo-racertv&utm_campaign=77152"
+        "https://simufy.com/?ref=photoracertv"
 
     Button(
         onClick = {
