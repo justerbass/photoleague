@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -37,6 +38,7 @@ import cl.app.photoleague.Model.Resource
 import cl.app.photoleague.Model.Teams
 import cl.app.photoleague.components.CategorySelector
 import cl.app.photoleague.components.PromoButton
+import cl.app.photoleague.components.StandingItem
 import cl.app.photoleague.components.StreamButton
 import cl.app.photoleague.navigation.BottomNavigationBar
 import cl.app.photoleague.viewModel.TeamsViewModel
@@ -79,87 +81,94 @@ fun Standing(navController: NavController, viewModel: TeamsViewModel) {
             StreamButton()
 
             if (selectedCategory.isNotBlank()) {
-            Row(
-                horizontalArrangement = Arrangement.Center,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Button(
-                    onClick = { showTeams = false },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = if (!showTeams) Color.Blue else Color.Gray
-                    )
-
+                Row(
+                    horizontalArrangement = Arrangement.Center,
+                    modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Pilotos", color = Color.White)
-                }
-
-                Spacer(modifier = Modifier.width(8.dp))
-
-                Button(
-                    onClick = { showTeams = true },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = if (showTeams) Color.Blue else Color.Gray
-                    )
-                ) {
-                    Text("Equipos", color = Color.White)
-                }
-            }
-            when {
-                apiResource == null -> {
-                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        CircularProgressIndicator()
-                    }
-                }
-
-                apiResource is Resource.Error -> {
-                    Text(
-                        text = "Error: ${apiResource.message}",
-                        modifier = Modifier.padding(16.dp)
-                    )
-                }
-
-                apiResource is Resource.Success -> {
-                    val driverStanding = apiResource.data.puntosPorPiloto.sortedByDescending {
-                        it.puntos_totales.toIntOrNull() ?: 0
-                    }
-                    val teamStanding = apiResource.data.puntosPorEquipo.sortedByDescending {
-                        it.total_puntos.toIntOrNull() ?: 0
-                    }
-
-                    if (!showTeams) {
-                        Text(
-                            text = "Clasificación de Pilotos",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(vertical = 8.dp)
+                    Button(
+                        onClick = { showTeams = false },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = if (!showTeams) Color.Blue else Color.Gray
                         )
-                        LazyColumn {
-                            items(driverStanding) { driver ->
-                                Text(
-                                    text = "${driver.piloto_nombre} - ${driver.puntos_totales} pts",
-                                    modifier = Modifier.padding(8.dp)
-                                )
-                            }
-                        }
 
-                    } else {
-                        Text(
-                            text = "Clasificación de Equipos",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(vertical = 8.dp)
+                    ) {
+                        Text("Pilotos", color = Color.White)
+                    }
+
+                    Spacer(modifier = Modifier.width(16.dp))
+
+                    Button(
+                        onClick = { showTeams = true },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = if (showTeams) Color.Blue else Color.Gray
                         )
-                        LazyColumn {
-                            items(teamStanding) { team ->
-                                Text(
-                                    text = "${team.equipo_nombre} - ${team.total_puntos} pts",
-                                    modifier = Modifier.padding(8.dp)
-                                )
-                            }
+                    ) {
+                        Text("Equipos", color = Color.White)
+                    }
+                }
+                when {
+                    apiResource == null -> {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            CircularProgressIndicator()
                         }
                     }
+
+                    apiResource is Resource.Error -> {
+                        Text(
+                            text = "Error: ${apiResource.message}",
+                            modifier = Modifier.padding(16.dp)
+                        )
+                    }
+
+                    apiResource is Resource.Success -> {
+                        val driverStanding = apiResource.data.puntosPorPiloto.sortedByDescending {
+                            it.puntos_totales.toIntOrNull() ?: 0
+                        }
+                        val teamStanding = apiResource.data.puntosPorEquipo.sortedByDescending {
+                            it.total_puntos.toIntOrNull() ?: 0
+                        }
+
+                        if (!showTeams) {
+                            Text(
+                                text = "Clasificación de Pilotos",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 20.sp,
+                                modifier = Modifier.padding(vertical = 16.dp)
+                            )
+                            LazyColumn {
+                                itemsIndexed(driverStanding) { index, driver ->
+                                    StandingItem(
+                                        position = index + 1,
+                                        name = driver.piloto_nombre,
+                                        points = driver.puntos_totales,
+                                        modifier = Modifier.padding(horizontal = 8.dp)
+                                    )
+                                }
+                            }
+
+                        } else {
+                            Text(
+                                text = "Clasificación de Equipos",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 20.sp,
+                                modifier = Modifier.padding(vertical = 16.dp)
+                            )
+                            LazyColumn {
+                                itemsIndexed(teamStanding) { index, team ->
+                                    StandingItem(
+                                        position = index + 1,
+                                        name = team.equipo_nombre,
+                                        points = team.total_puntos,
+                                        modifier = Modifier.padding(horizontal = 8.dp)
+                                    )
+                                }
+                            }
+                        }
+                    }
                 }
-            }
             } else {
                 Text(
                     text = "Seleccione una categoría para ver la información",

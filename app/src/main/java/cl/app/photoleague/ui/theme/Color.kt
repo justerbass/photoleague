@@ -70,3 +70,6 @@ fun getTeamColors(teamName: String): Pair<Color, Color> {
 
 val canary = Color(0xFFFFEF00)
 
+val Gold = Color(0xFFCFB53B)
+val Silver = Color(0xFFC0C0C0)
+val Bronze = Color(0xFFCD7F32)

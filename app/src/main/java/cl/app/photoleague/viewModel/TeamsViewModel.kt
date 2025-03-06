@@ -16,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TeamsViewModel @Inject constructor(
-    private val teamsRepository: TeamsRepository,
+    teamsRepository: TeamsRepository,
     private val photoLeagueRepository: PhotoLeagueRepository
 ) : ViewModel() {
 

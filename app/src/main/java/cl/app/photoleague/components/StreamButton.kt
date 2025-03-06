@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
@@ -30,7 +31,8 @@ fun StreamButton() {
         },
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp),
+            .padding(12.dp)
+            .height(48.dp),
         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6441a5))
     ) {
         Image(painter = painterResource(id = R.drawable.icons8_twitch_384),

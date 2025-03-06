@@ -11,12 +11,12 @@ private val AppColorScheme = lightColorScheme(
 
     primary = FerrariPrimary, // o el color que prefieras
     secondary = canary,
-    tertiary = Pink40,
+    tertiary = SimufyPrimary,
     background = canary,
     surface = Color.White,
     onPrimary = Color.White,
     onSecondary = Color.Black,
-    onTertiary = Color.Black,
+    onTertiary = SimufySecondary,
     onBackground = Color.Black,
     onSurface = Color.Black,
     error = Color.Red,
