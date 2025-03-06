@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -53,7 +54,9 @@ fun HomeScreen(navController: NavController, viewModel: TeamsViewModel) {
             CenterAlignedTopAppBar(
                 title = { Text(text = "PhotoLeague $selectedCategory") },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFFFFEF00)
+                    containerColor = MaterialTheme.colorScheme.background,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimary
+
                 )
             )
         },
@@ -65,7 +68,7 @@ fun HomeScreen(navController: NavController, viewModel: TeamsViewModel) {
             modifier = Modifier
                 .padding(padding)
                 .fillMaxSize()
-                .background(Color(0xFFFFEF00))
+                .background(MaterialTheme.colorScheme.background)
         ) {
             PromoButton()
             CategorySelector(selectedCategory, viewModel::selectCategory)
@@ -82,7 +85,8 @@ fun HomeScreen(navController: NavController, viewModel: TeamsViewModel) {
             } else {
                 Text(
                     text = "Seleccione una categoría para ver la información",
-                    modifier = Modifier.padding(16.dp)
+                    modifier = Modifier.padding(16.dp),
+                    color = MaterialTheme.colorScheme.onPrimary,
                 )
             }
         }

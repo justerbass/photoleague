@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -39,7 +40,8 @@ fun Calendar(navController: NavController, viewModel: TeamsViewModel) {
             CenterAlignedTopAppBar(
                 title = { Text(text = "PhotoLeague Calendario $selectedCategory") },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFFFFEF00)
+                    containerColor = MaterialTheme.colorScheme.background,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimary
                 )
             )
         },
@@ -51,7 +53,7 @@ fun Calendar(navController: NavController, viewModel: TeamsViewModel) {
             modifier = Modifier
                 .padding(padding)
                 .fillMaxSize()
-                .background(Color(0xFFFFEF00))
+                .background(MaterialTheme.colorScheme.background)
         ) {
             PromoButton()
             CategorySelector(selectedCategory, viewModel::selectCategory)

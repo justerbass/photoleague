@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import cl.app.photoleague.R
-import cl.app.photoleague.Model.ButtonItem
 
 
 @Composable
@@ -29,11 +28,10 @@ fun BottomNavigationBar(navController: NavController) {
     val currentRoute = navBackStackEntry?.destination?.route
 
     NavigationBar (
-        containerColor = MaterialTheme.colorScheme.background,
+        containerColor = MaterialTheme.colorScheme.secondary,
         tonalElevation = 16.dp,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 8.dp)
     ){
         items.forEach { screen ->
             NavigationBarItem(
@@ -62,7 +60,8 @@ fun BottomNavigationBar(navController: NavController) {
                         )
                     }
                 },
-                label = { Text(screen.route.uppercase()) },
+                label = { Text(text = screen.route.uppercase(),
+                    modifier = Modifier.padding(top = 8.dp),) },
                 selected = currentRoute == screen.route,
                 onClick = {
                     navController.navigate(screen.route) {

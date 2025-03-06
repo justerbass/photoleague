@@ -64,11 +64,12 @@ fun getTeamColors(teamName: String): Pair<Color, Color> {
         "Jordan" -> Pair(JordanPrimary, JordanSecondary)
         "Brawn" -> Pair(BrawnPrimary, BrawnSecondary)
         "Simufy Wildcard" -> Pair(SimufyPrimary, SimufySecondary)
-        else -> Pair(Color.Gray, Color.DarkGray) // Colores por defecto
+        else -> Pair(Color.Gray, Color.DarkGray)
     }
 }
 
-val canary = Color(0xFFFFEF00)
+val canary = Color(0xFFFFD54F)
+val background = Color(0xFF0B0E0F)
 
 val Gold = Color(0xFFCFB53B)
 val Silver = Color(0xFFC0C0C0)
