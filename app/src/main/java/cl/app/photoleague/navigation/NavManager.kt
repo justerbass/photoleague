@@ -56,7 +56,7 @@ fun NavManager(viewModel: TeamsViewModel){
         }
 
         composable(Screen.News.route) {
-            News(navController = navControler)
+            News(navController = navControler, viewModel)
         }
     }
 }

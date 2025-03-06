@@ -62,7 +62,7 @@ fun getTeamColors(teamName: String): Pair<Color, Color> {
         "Racing Bulls" -> Pair(RacingBullsPrimary, RacingBullsSecondary)
         "Kick Sauber" -> Pair(KickSauberPrimary, KickSauberSecondary)
         "Jordan" -> Pair(JordanPrimary, JordanSecondary)
-        "Brawn" -> Pair(BrawnPrimary, BrawnSecondary)
+        "Brawn GP" -> Pair(BrawnPrimary, BrawnSecondary)
         "Simufy Wildcard" -> Pair(SimufyPrimary, SimufySecondary)
         else -> Pair(Color.Gray, Color.DarkGray)
     }
@@ -74,3 +74,6 @@ val background = Color(0xFF0B0E0F)
 val Gold = Color(0xFFCFB53B)
 val Silver = Color(0xFFC0C0C0)
 val Bronze = Color(0xFFCD7F32)
+
+val twitterColor = Color(0xFF00ACEE)
+val instagramColor = Color(0xFF405DE6)

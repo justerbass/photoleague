@@ -64,7 +64,7 @@ object DataSource {
         ),
         Teams(
             "BRW",
-            "Brawn",
+            "Brawn GP",
             "Robb3n RossBrawn",
         ),
         Teams(

@@ -1,5 +1,6 @@
 package cl.app.photoleague.view
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -31,12 +33,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import cl.app.photoleague.Model.Resource
 import cl.app.photoleague.Model.Teams
+import cl.app.photoleague.R
 import cl.app.photoleague.components.CategorySelector
 import cl.app.photoleague.components.PromoButton
 import cl.app.photoleague.components.StandingItem
@@ -61,7 +66,19 @@ fun Standing(navController: NavController, viewModel: TeamsViewModel) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text(text = "PhotoLeague Clasificación $selectedCategory") },
+                title = {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Image(
+                            painter = painterResource(id = R.drawable.photo1),
+                            contentDescription = "Logo",
+                            modifier = Modifier.size(64.dp)
+                        )
+                        Text(
+                            text = "PhotoLeague Clasificación \n$selectedCategory",
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background,
                     titleContentColor = MaterialTheme.colorScheme.onPrimary

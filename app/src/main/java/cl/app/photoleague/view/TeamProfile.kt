@@ -117,7 +117,7 @@ fun TeamProfile(navController: NavController, team: Teams, category: String, vie
                     brush = Brush.linearGradient(
                         colors = listOf(primaryColor, secondaryColor),
                         start = Offset(0f, 0f),
-                        end = Offset(1000f, 1000f)
+                        end = Offset(1000f, 2000f)
                     )
                 )
         ) {
@@ -163,8 +163,11 @@ fun TeamProfile(navController: NavController, team: Teams, category: String, vie
                                 color = Color.White
                             )
                         } else {
+                            val sortedTeamDrivers = teamDrivers.sortedByDescending { driver ->
+                                pilotPointsMap[driver.piloto_nombre]?.puntos_totales?.toIntOrNull() ?: 0
+                            }
                             LazyColumn {
-                                items(teamDrivers) { driver ->
+                                items(sortedTeamDrivers) { driver ->
                                     val driverPoints = pilotPointsMap[driver.piloto_nombre]?.puntos_totales ?: "N/A"
                                     DriverItem(driver = driver, points = driverPoints)
                                 }
