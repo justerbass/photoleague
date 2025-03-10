@@ -31,12 +31,13 @@ fun NewsCard(
             .clickable { onClick(article) },
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.background)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
                 text = article.title,
-                style = MaterialTheme.typography.titleMedium
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onBackground
             )
             Spacer(modifier = Modifier.height(8.dp))
             AsyncImage(
@@ -51,7 +52,8 @@ fun NewsCard(
             Text(
                 text = article.content,
                 style = MaterialTheme.typography.bodyMedium,
-                maxLines = 3
+                maxLines = 2,
+                color = MaterialTheme.colorScheme.onBackground
             )
 
         }
