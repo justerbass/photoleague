@@ -1,5 +1,6 @@
 package cl.app.photoleague.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,19 +19,26 @@ import cl.app.photoleague.Model.NewsArticle
 import coil.compose.AsyncImage
 
 @Composable
-fun NewsCard(article: NewsArticle, modifier: Modifier = Modifier) {
+fun NewsCard(
+    article: NewsArticle,
+    onClick: (NewsArticle) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .padding(8.dp),
+            .padding(8.dp)
+            .clickable { onClick(article) },
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
-        )
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            // Cargar la imagen usando Coil
+            Text(
+                text = article.title,
+                style = MaterialTheme.typography.titleMedium
+            )
+            Spacer(modifier = Modifier.height(8.dp))
             AsyncImage(
                 model = article.imageUrl,
                 contentDescription = article.title,
@@ -41,16 +49,11 @@ fun NewsCard(article: NewsArticle, modifier: Modifier = Modifier) {
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = article.title,
-                style = MaterialTheme.typography.titleMedium
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            // Mostrar una parte del contenido (puedes ajustar maxLines o truncar el texto)
-            Text(
                 text = article.content,
                 style = MaterialTheme.typography.bodyMedium,
                 maxLines = 3
             )
+
         }
     }
 }
