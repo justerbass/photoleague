@@ -1,7 +1,7 @@
 package cl.app.photoleague.di
 
-import cl.app.photoleague.data.ApiResultPhotoLeague
-import cl.app.photoleague.util.Constants.Companion.BASE_URL
+import cl.app.photoleague.data.NewsApi
+import cl.app.photoleague.util.Constants.Companion.BASE_URL_NEWS
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,29 +13,27 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ApiResultadosModule {
+object NewsModule {
 
     @Singleton
     @Provides
-    @Named("BaseURL")
-    fun providesBaseURL() = BASE_URL
+    @Named("BaseNews")
+    fun providesBaseNewsURL() = BASE_URL_NEWS
 
     @Singleton
     @Provides
-    @BaseRetrofit
-    fun providesRetrofit(@Named("BaseURL") baseUrl: String): Retrofit{
+    @BaseNews
+    fun retrofitInstance(@Named("BaseNews") BASE_URL_NEWS: String): Retrofit{
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(baseUrl)
+            .baseUrl(BASE_URL_NEWS)
             .build()
     }
 
     @Singleton
     @Provides
-    fun providesApiResultados(@BaseRetrofit retrofit: Retrofit): ApiResultPhotoLeague {
-        return retrofit.create(ApiResultPhotoLeague::class.java)
-
+    fun newsApi(@BaseNews retrofit: Retrofit): NewsApi {
+        return retrofit.create(NewsApi::class.java)
     }
-
 
 }

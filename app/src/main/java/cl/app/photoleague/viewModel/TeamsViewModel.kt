@@ -2,10 +2,12 @@ package cl.app.photoleague.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import cl.app.photoleague.Model.NewsArticle
 import cl.app.photoleague.Model.Races
 import cl.app.photoleague.Model.Resource
 import cl.app.photoleague.Model.ResultadoResponse
 import cl.app.photoleague.Model.Teams
+import cl.app.photoleague.repository.NewsRepository
 import cl.app.photoleague.repository.PhotoLeagueRepository
 import cl.app.photoleague.repository.TeamsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,9 +19,9 @@ import javax.inject.Inject
 @HiltViewModel
 class TeamsViewModel @Inject constructor(
     teamsRepository: TeamsRepository,
-    private val photoLeagueRepository: PhotoLeagueRepository
+    private val photoLeagueRepository: PhotoLeagueRepository,
+    private val newsRepository: NewsRepository
 ) : ViewModel() {
-
 
     private val allTeams = teamsRepository.getTeams()
     private val allRaces = teamsRepository.getRaces()
@@ -58,5 +60,15 @@ class TeamsViewModel @Inject constructor(
 
     fun getRacesByCategory(category: String): List<Races> {
         return allRaces.filter { it.category == category }
+    }
+
+    private val _newsArticles = MutableStateFlow<List<NewsArticle>>(emptyList())
+    val newsArticles: StateFlow<List<NewsArticle>> = _newsArticles
+
+    init {
+        viewModelScope.launch {
+            val articles = newsRepository.getNews()
+            _newsArticles.value = articles
+        }
     }
 }
