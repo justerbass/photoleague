@@ -13,8 +13,8 @@ android {
         applicationId = "cl.app.photoleague"
         minSdk = 27
         targetSdk = 35
-        versionCode = 4
-        versionName = "1.10"
+        versionCode = 7
+        versionName = "2.11"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

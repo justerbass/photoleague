@@ -52,7 +52,7 @@ fun NewsCard(
             Text(
                 text = article.content,
                 style = MaterialTheme.typography.bodyMedium,
-                maxLines = 2,
+                maxLines = 3,
                 color = MaterialTheme.colorScheme.onBackground
             )
 

@@ -43,8 +43,8 @@ val KickSauberSecondary = Color(0xFF0B0E0F)
 val JordanPrimary = Color(0xFFFFD700)
 val JordanSecondary = Color.Black
 
-val BrawnPrimary = Color(0xFFCEDC00)
-val BrawnSecondary = Color.White
+val BrawnPrimary = Color(0xFF818F00)
+val BrawnSecondary = Color(0xFFE3E4E5)
 
 val SimufyPrimary = Color(0xFFff5730)
 val SimufySecondary = Color(0xFFe0e0d4)
