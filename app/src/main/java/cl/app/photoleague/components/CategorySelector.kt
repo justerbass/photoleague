@@ -3,6 +3,7 @@ package cl.app.photoleague.components
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -12,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -28,7 +30,7 @@ fun CategorySelector(selectedCategory: String, onCategorySelected: (String) -> U
         modifier = Modifier
             .fillMaxWidth(),
 
-        horizontalArrangement = Arrangement.SpaceEvenly
+        horizontalArrangement = Arrangement.SpaceAround
     ) {
         categories.forEach { category ->
             Button(
@@ -37,9 +39,9 @@ fun CategorySelector(selectedCategory: String, onCategorySelected: (String) -> U
                     containerColor = categoryColors[category] ?: Color.Gray,
                     contentColor = Color.White
                 ),
-                modifier = Modifier.weight(1f).padding(4.dp)
+                modifier = Modifier.weight(1f).padding(8.dp).height(60.dp)
             ) {
-                Text(category, fontWeight = FontWeight.Bold)
+                Text(category, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
             }
         }
     }

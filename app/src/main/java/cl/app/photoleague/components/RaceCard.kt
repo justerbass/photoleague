@@ -31,21 +31,21 @@ fun RaceCard(race: Races) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+            .padding(horizontal = 16.dp, vertical = 12.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(300.dp) // Ajusta la altura según necesites
+                .height(300.dp)
         ) {
-            // Imagen de fondo (Bandera del país)
+
             Image(
                 painter = painterResource(id = race.flagImageRes),
                 contentDescription = "Bandera de ${race.grandPrix}",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.matchParentSize(),
-                alpha = 0.2f // Opacidad para mejorar la visibilidad del texto
+                alpha = 0.2f
             )
 
             Column(

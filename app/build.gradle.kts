@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -11,8 +13,8 @@ android {
         applicationId = "cl.app.photoleague"
         minSdk = 27
         targetSdk = 35
-        versionCode = 3
-        versionName = "1.0"
+        versionCode = 7
+        versionName = "2.11"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -47,6 +49,11 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    kapt{
+        correctErrorTypes = true
+    }
+
 }
 
 dependencies {
@@ -61,6 +68,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.play.services.games.v2)
+    implementation(libs.androidx.room.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -72,4 +80,19 @@ dependencies {
     //  navegacion
     implementation("androidx.navigation:navigation-compose:2.8.7")
     implementation("androidx.compose.ui:ui:1.7.8")
+
+    //  gson
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation ("com.google.code.gson:gson:2.10.1")
+
+    //  retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+
+    //  Hilt
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.7.0")
 }

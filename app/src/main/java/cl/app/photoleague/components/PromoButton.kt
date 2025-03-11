@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
@@ -22,7 +23,7 @@ import cl.app.photoleague.R
 fun PromoButton() {
     val context = LocalContext.current
     val sponsorUrl =
-        "https://simufy.com/?sca_ref=5427618.iHB2Jjourw&utm_source=afiliados&utm_medium=photo-racertv&utm_campaign=77152"
+        "https://simufy.com/?ref=photoracertv"
 
     Button(
         onClick = {
@@ -31,7 +32,8 @@ fun PromoButton() {
         },
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp),
+            .padding(12.dp)
+            .height(48.dp),
         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFe0e0d4))
     ) {
         Image(
