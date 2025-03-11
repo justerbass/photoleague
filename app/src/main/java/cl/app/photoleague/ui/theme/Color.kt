@@ -49,6 +49,16 @@ val BrawnSecondary = Color(0xFFE3E4E5)
 val SimufyPrimary = Color(0xFFff5730)
 val SimufySecondary = Color(0xFFe0e0d4)
 
+val canary = Color(0xFFFFD54F)
+val background = Color(0xFF0B0E0F)
+
+val Gold = Color(0xFFCFB53B)
+val Silver = Color(0xFFC0C0C0)
+val Bronze = Color(0xFFCD7F32)
+
+val twitterColor = Color(0xFF00ACEE)
+val instagramColor = Color(0xFF405DE6)
+
 fun getTeamColors(teamName: String): Pair<Color, Color> {
     return when (teamName) {
         "Ferrari" -> Pair(FerrariPrimary, FerrariSecondary)
@@ -67,13 +77,3 @@ fun getTeamColors(teamName: String): Pair<Color, Color> {
         else -> Pair(Color.Gray, Color.DarkGray)
     }
 }
-
-val canary = Color(0xFFFFD54F)
-val background = Color(0xFF0B0E0F)
-
-val Gold = Color(0xFFCFB53B)
-val Silver = Color(0xFFC0C0C0)
-val Bronze = Color(0xFFCD7F32)
-
-val twitterColor = Color(0xFF00ACEE)
-val instagramColor = Color(0xFF405DE6)
