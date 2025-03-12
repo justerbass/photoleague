@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Merge_at_04_03_2025_15_32_[Changes]" date="1741113129909" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_04_03_2025_15_32_[Changes]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Merge at 04/03/2025 15:32 [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="app/release/app-release.aab" />
-    <option name="AFTER_PATH" value="app/release/app-release.aab" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_04_03_2025_15_32_[Changes]/app-release.aab" />
-  </binary>
-</changelist>

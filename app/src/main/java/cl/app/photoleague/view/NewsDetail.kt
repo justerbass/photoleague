@@ -23,9 +23,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import cl.app.photoleague.Model.NewsArticle
+import cl.app.photoleague.R
+import cl.app.photoleague.components.SocialButton
+import cl.app.photoleague.ui.theme.instagramColor
+import cl.app.photoleague.ui.theme.twitterColor
 import coil.compose.AsyncImage
 
 
@@ -75,7 +80,27 @@ fun NewsDetail(
                 item {
                     Text(
                         text = article.content,
-                        style = MaterialTheme.typography.bodyLarge
+                        style = MaterialTheme.typography.bodyLarge,
+                        textAlign = TextAlign.Justify
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                }
+                item{
+                    SocialButton(
+                        appsocial = "twitter://user?screen_name=photoleagueinfo",
+                        websocial = "https://twitter.com/photoleagueinfo",
+                        red = "Twitter",
+                        icon = R.drawable.icons8_x_384,
+                        containercolor = twitterColor
+                    )
+                }
+                item{
+                    SocialButton(
+                        appsocial = "instagram://user?username=photoleagueinfo",
+                        websocial = "https://www.instagram.com/photoleagueinfo",
+                        red = "Instagram",
+                        icon = R.drawable.icons8_instagram_384,
+                        containercolor = instagramColor
                     )
                 }
             }
