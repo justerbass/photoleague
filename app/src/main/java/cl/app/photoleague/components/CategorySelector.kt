@@ -18,12 +18,12 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun CategorySelector(selectedCategory: String, onCategorySelected: (String) -> Unit) {
-    val categories = listOf("F1 Pro", "F2 Junior", "F3 Academy")
+    val categories = listOf("Elite", "Junior", "Academy")
 
     val categoryColors = mapOf(
-        "F1 Pro" to Color(0xFFE10600),
-        "F2 Junior" to Color(0xFF004267),
-        "F3 Academy" to Color(0xFF7E7E7E)
+        "Elite" to Color(0xFFE10600),
+        "Junior" to Color(0xFF004267),
+        "Academy" to Color(0xFF7E7E7E)
     )
 
     Row(
@@ -41,7 +41,7 @@ fun CategorySelector(selectedCategory: String, onCategorySelected: (String) -> U
                 ),
                 modifier = Modifier.weight(1f).padding(8.dp).height(60.dp)
             ) {
-                Text(category, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
+                Text(category.uppercase(), fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
             }
         }
     }

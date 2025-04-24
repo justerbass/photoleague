@@ -1,5 +1,6 @@
 package cl.app.photoleague.view
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,6 +34,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.motionEventSpy
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -45,12 +49,17 @@ import cl.app.photoleague.viewModel.TeamsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TeamProfile(navController: NavController, team: Teams, category: String, viewModel: TeamsViewModel) {
+fun TeamProfile(
+    navController: NavController,
+    team: Teams,
+    category: String,
+    viewModel: TeamsViewModel
+) {
 
     val apiResource = when (category) {
-        "F1 Pro" -> viewModel.resultadosF1.collectAsState().value
-        "F2 Junior" -> viewModel.resultadosF2.collectAsState().value
-        "F3 Academy" -> viewModel.resultadosF3.collectAsState().value
+        "Elite" -> viewModel.resultadosF1.collectAsState().value
+        "Junior" -> viewModel.resultadosF2.collectAsState().value
+        "Academy" -> viewModel.resultadosF3.collectAsState().value
         else -> null
     }
     val teamPoints = remember(apiResource) {
@@ -71,40 +80,46 @@ fun TeamProfile(navController: NavController, team: Teams, category: String, vie
 
     val teamDrivers = remember(apiResource) {
         if (apiResource is Resource.Success) {
-            apiResource.data.entry_list.filter { it.equipo_nombre.equals(team.name, ignoreCase = true) }
+            apiResource.data.entry_list.filter {
+                it.equipo_nombre.equals(
+                    team.name,
+                    ignoreCase = true
+                )
+            }
         } else emptyList()
+    }
+
+    val carImage = when (category) {
+        "Elite" -> team.elite_car
+        "Junior" -> team.junior_car
+        "Academy" -> team.academy_car
+        else -> null
     }
 
     val (primaryColor, secondaryColor) = getTeamColors(team.name)
 
     Scaffold(
         containerColor = Color.Transparent,
-
         topBar =
         {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.Transparent)
-                    .statusBarsPadding()
-            ) {
-                CenterAlignedTopAppBar(
-                    title = { Text(team.name, color = Color.White) },
-                    navigationIcon = {
-                        IconButton(onClick = { navController.popBackStack() }) {
-                            Icon(
-                                Icons.AutoMirrored.Default.ArrowBack,
-                                contentDescription = "Volver",
-                                tint = Color.White
-                            )
-                        }
-                    },
-                    colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                        containerColor = Color.Transparent,
-                        scrolledContainerColor = Color.Transparent
-                    )
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(team.name, color = Color.White)
+                        },
+                navigationIcon = {
+                    IconButton(onClick = { navController.popBackStack() }) {
+                        Icon(
+                            Icons.AutoMirrored.Default.ArrowBack,
+                            contentDescription = "Volver",
+                            tint = Color.White
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = Color.Transparent,
+                    scrolledContainerColor = Color.Transparent
                 )
-            }
+            )
         },
         bottomBar = { BottomNavigationBar(navController) })
 
@@ -124,9 +139,23 @@ fun TeamProfile(navController: NavController, team: Teams, category: String, vie
             Column(
                 modifier = Modifier
                     .padding(padding)
-                    .padding(16.dp)
+                    .padding(bottom = 16.dp)
                     .fillMaxSize()
             ) {
+                Box (modifier = Modifier.fillMaxWidth(),
+                    contentAlignment = Alignment.Center){
+                    Image(painter = painterResource(id = team.logo), contentDescription = "Logo del equipo",
+                        contentScale = ContentScale.Crop, modifier = Modifier.height(100.dp))
+                }
+
+                Box (modifier = Modifier.fillMaxWidth(),
+                    contentAlignment = Alignment.Center){
+                    carImage?.let { painterResource(it) }?.let {
+                        Image(painter = it, contentDescription = "Coche del equipo",
+                            contentScale = ContentScale.Crop, modifier = Modifier.height(200.dp))
+                    }
+                }
+
                 Text(
                     text = "Jefe de Equipo: ${team.teamPrincipal}",
                     style = MaterialTheme.typography.headlineSmall,
@@ -149,6 +178,7 @@ fun TeamProfile(navController: NavController, team: Teams, category: String, vie
                     null -> {
                         CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
                     }
+
                     is Resource.Error -> {
                         Text(
                             text = "Error: ${apiResource.message}",
@@ -156,6 +186,7 @@ fun TeamProfile(navController: NavController, team: Teams, category: String, vie
                             modifier = Modifier.padding(16.dp)
                         )
                     }
+
                     is Resource.Success -> {
                         if (teamDrivers.isEmpty()) {
                             Text(
@@ -164,11 +195,14 @@ fun TeamProfile(navController: NavController, team: Teams, category: String, vie
                             )
                         } else {
                             val sortedTeamDrivers = teamDrivers.sortedByDescending { driver ->
-                                pilotPointsMap[driver.piloto_nombre]?.puntos_totales?.toIntOrNull() ?: 0
+                                pilotPointsMap[driver.piloto_nombre]?.puntos_totales?.toIntOrNull()
+                                    ?: 0
                             }
                             LazyColumn {
                                 items(sortedTeamDrivers) { driver ->
-                                    val driverPoints = pilotPointsMap[driver.piloto_nombre]?.puntos_totales ?: "N/A"
+                                    val driverPoints =
+                                        pilotPointsMap[driver.piloto_nombre]?.puntos_totales
+                                            ?: "N/A"
                                     DriverItem(driver = driver, points = driverPoints)
                                 }
                             }
@@ -177,9 +211,5 @@ fun TeamProfile(navController: NavController, team: Teams, category: String, vie
                 }
             }
         }
-        Box(modifier = Modifier.padding(padding)) {
-
-        }
-
     }
 }

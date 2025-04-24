@@ -57,9 +57,9 @@ fun Standing(navController: NavController, viewModel: TeamsViewModel) {
     var showTeams by remember { mutableStateOf(false) }
 
     val apiResource = when (selectedCategory) {
-        "F1 Pro" -> viewModel.resultadosF1.collectAsState().value
-        "F2 Junior" -> viewModel.resultadosF2.collectAsState().value
-        "F3 Academy" -> viewModel.resultadosF3.collectAsState().value
+        "Elite" -> viewModel.resultadosF1.collectAsState().value
+        "Junior" -> viewModel.resultadosF2.collectAsState().value
+        "Academy" -> viewModel.resultadosF3.collectAsState().value
         else -> null
     }
 
