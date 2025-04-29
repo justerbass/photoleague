@@ -9,7 +9,7 @@ object DataSource {
     val teams = listOf(
         Teams(
             "FER",
-            "Ferrari",
+            "Red Motors",
             "proyectohistoria",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -18,7 +18,7 @@ object DataSource {
         ),
         Teams(
             "RB",
-            "Red Bull",
+            "Muros Lovers",
             "[PEC] FelipeBau09",
             R.drawable.redbull_logo,
             R.drawable.ferrary_f1,
@@ -27,7 +27,7 @@ object DataSource {
         ),
         Teams(
             "MCL",
-            "McLaren",
+            "No Speed Limit",
             "Comerut",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -36,7 +36,7 @@ object DataSource {
         ),
         Teams(
             "WIL",
-            "Williams",
+            "Zero Racing",
             "Reversemodex (Fer)",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -45,7 +45,7 @@ object DataSource {
         ),
         Teams(
             "AS",
-            "Aston Martin",
+            "Team No Pace",
             "Alberto Alcalá Cano | LGNZH",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -54,7 +54,7 @@ object DataSource {
         ),
         Teams(
             "HAS",
-            "Haas",
+            "Jaspersor",
             "paulaaa_moreno",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -63,7 +63,7 @@ object DataSource {
         ),
         Teams(
             "REN",
-            "Renault",
+            "Caracoles Furiosos",
             "MAOMOGA_56",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -72,7 +72,7 @@ object DataSource {
         ),
         Teams(
             "MER",
-            "Mercedes",
+            "Next Lap",
             "MERCURIO",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -81,7 +81,7 @@ object DataSource {
         ),
         Teams(
             "RBS",
-            "Racing Bulls",
+            "Toros Racing",
             "el provi",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -90,7 +90,7 @@ object DataSource {
         ),
         Teams(
             "KS",
-            "Kick Sauber",
+            "Mancos",
             "Christiantmt14",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -99,7 +99,7 @@ object DataSource {
         ),
         Teams(
             "JOR",
-            "Jordan",
+            "Zorros Salvajes",
             "Fran_JM",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
@@ -108,7 +108,7 @@ object DataSource {
         ),
         Teams(
             "BRW",
-            "Brawn GP",
+            "Nova GP",
             "Robb3n RossBrawn",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
