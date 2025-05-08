@@ -28,7 +28,7 @@ object DataSource {
         Teams(
             "MCL",
             "No Speed Limit",
-            "Comerut",
+            "Maomoga_56",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
@@ -46,7 +46,7 @@ object DataSource {
         Teams(
             "AS",
             "Team No Pace",
-            "Alberto Alcalá Cano | LGNZH",
+            "Lgnzh",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
@@ -64,7 +64,7 @@ object DataSource {
         Teams(
             "REN",
             "Caracoles Furiosos",
-            "MAOMOGA_56",
+            "xGersonG",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
@@ -73,7 +73,7 @@ object DataSource {
         Teams(
             "MER",
             "Next Lap",
-            "MERCURIO",
+            "Snowdenesp",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
@@ -82,7 +82,7 @@ object DataSource {
         Teams(
             "RBS",
             "Toros Racing",
-            "el provi",
+            "Proviagus",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
@@ -100,7 +100,7 @@ object DataSource {
         Teams(
             "JOR",
             "Zorros Salvajes",
-            "Fran_JM",
+            "fjm_mamolas",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
@@ -109,7 +109,7 @@ object DataSource {
         Teams(
             "BRW",
             "Nova GP",
-            "Robb3n RossBrawn",
+            "Robb3n23",
             R.drawable.ferrary_logo,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
