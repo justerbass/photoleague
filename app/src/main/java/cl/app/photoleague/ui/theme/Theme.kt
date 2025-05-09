@@ -9,14 +9,14 @@ import androidx.compose.ui.graphics.Color
 
 private val AppColorScheme = lightColorScheme(
 
-    primary = FerrariPrimary, // o el color que prefieras
+    primary = Color.Red,
     secondary = canary,
     tertiary = SimufyPrimary,
     background = background,
     surface = Color.White,
     onPrimary = Color.White,
     onSecondary = Color.Black,
-    onTertiary = SimufySecondary,
+    onTertiary = Silver,
     onBackground = Color.White,
     onSurface = Color.Black,
     error = Color.Red,

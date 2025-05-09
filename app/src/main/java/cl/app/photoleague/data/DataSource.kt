@@ -11,7 +11,7 @@ object DataSource {
             "FER",
             "Red Motors",
             "proyectohistoria",
-            R.drawable.ferrary_logo,
+            R.drawable.red_motors,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -20,7 +20,7 @@ object DataSource {
             "RB",
             "Muros Lovers",
             "[PEC] FelipeBau09",
-            R.drawable.redbull_logo,
+            R.drawable.muros_lovers,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -29,7 +29,7 @@ object DataSource {
             "MCL",
             "No Speed Limit",
             "Maomoga_56",
-            R.drawable.ferrary_logo,
+            R.drawable.no_speed_limit,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -38,7 +38,7 @@ object DataSource {
             "WIL",
             "Zero Racing",
             "Reversemodex (Fer)",
-            R.drawable.ferrary_logo,
+            R.drawable.zero_racing,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -47,7 +47,7 @@ object DataSource {
             "AS",
             "Team No Pace",
             "Lgnzh",
-            R.drawable.ferrary_logo,
+            R.drawable.team_no_pace,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -56,7 +56,7 @@ object DataSource {
             "HAS",
             "Jaspersor",
             "paulaaa_moreno",
-            R.drawable.ferrary_logo,
+            R.drawable.jaspersor,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -65,7 +65,7 @@ object DataSource {
             "REN",
             "Caracoles Furiosos",
             "xGersonG",
-            R.drawable.ferrary_logo,
+            R.drawable.caracoles_furiosos,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -74,7 +74,7 @@ object DataSource {
             "MER",
             "Next Lap",
             "Snowdenesp",
-            R.drawable.ferrary_logo,
+            R.drawable.next_lap,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -83,7 +83,7 @@ object DataSource {
             "RBS",
             "Toros Racing",
             "Proviagus",
-            R.drawable.ferrary_logo,
+            R.drawable.toros_racing,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -92,7 +92,7 @@ object DataSource {
             "KS",
             "Mancos",
             "Christiantmt14",
-            R.drawable.ferrary_logo,
+            R.drawable.mancos,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -101,7 +101,7 @@ object DataSource {
             "JOR",
             "Zorros Salvajes",
             "fjm_mamolas",
-            R.drawable.ferrary_logo,
+            R.drawable.zorros_salvajes,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -110,7 +110,7 @@ object DataSource {
             "BRW",
             "Nova GP",
             "Robb3n23",
-            R.drawable.ferrary_logo,
+            R.drawable.nova_gp,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -119,7 +119,7 @@ object DataSource {
             "SW",
             "Simufy Wildcard",
             "Simufy",
-            R.drawable.ferrary_logo,
+            R.drawable.simufy_wildcard,
             R.drawable.ferrary_f1,
             R.drawable.ferrary_f2,
             R.drawable.ferrary_f3
@@ -131,7 +131,7 @@ object DataSource {
             "Elite",
             "Circuitro de Silverstone",
             "Gran Premio Histórico",
-            "08-05-2025",
+            "15-05-2025",
             R.drawable.silverstone,
             R.drawable.flag_of_the_united_kingdom
         ),
@@ -139,7 +139,7 @@ object DataSource {
             "Junior",
             "Circuitro de Snetterton",
             "Gran Premio Histórico",
-            "07-05-2025",
+            "14-05-2025",
             R.drawable.snetterton,
             R.drawable.flag_of_the_united_kingdom
         ),
@@ -147,7 +147,7 @@ object DataSource {
             "Academy",
             "Circuitro de Snetterton",
             "Gran Premio Histórico",
-            "07-05-2025",
+            "14-05-2025",
             R.drawable.snetterton,
             R.drawable.flag_of_the_united_kingdom
         ),
@@ -156,7 +156,7 @@ object DataSource {
             "Elite",
             "Circuitro de Road América",
             "Gran Premio de EEUU",
-            "15-05-2025",
+            "22-05-2025",
             R.drawable.road_america,
             R.drawable.flag_of_the_united_states
         ),
@@ -164,7 +164,7 @@ object DataSource {
             "Junior",
             "Circuitro de Road América",
             "Gran Premio de EEUU",
-            "14-05-2025",
+            "21-05-2025",
             R.drawable.road_america,
             R.drawable.flag_of_the_united_states
         ),
@@ -172,7 +172,7 @@ object DataSource {
             "Academy",
             "Circuitro de Summit Point",
             "Gran Premio de EEUU",
-            "14-05-2025",
+            "21-05-2025",
             R.drawable.road_america,
             R.drawable.flag_of_the_united_states
         ),
@@ -181,7 +181,7 @@ object DataSource {
             "Elite",
             "Circuitro de Monza",
             "Gran Premio de Europa",
-            "22-05-2025",
+            "29-05-2025",
             R.drawable.monza,
             R.drawable.flag_of_italy
         ),
@@ -189,7 +189,7 @@ object DataSource {
             "Junior",
             "Circuitro de Monza",
             "Gran Premio de Europa",
-            "21-05-2025",
+            "28-05-2025",
             R.drawable.monza,
             R.drawable.flag_of_italy
         ),
@@ -197,7 +197,7 @@ object DataSource {
             "Academy",
             "Circuitro de Oran Rudskogen",
             "Gran Premio de Europa",
-            "21-05-2025",
+            "28-05-2025",
             R.drawable.rudskogen,
             R.drawable.flag_of_norway
         ),
@@ -206,7 +206,7 @@ object DataSource {
             "Elite",
             "Circuitro de Suzuka",
             "Gran Premio del Pacífico",
-            "28-05-2025",
+            "05-06-2025",
             R.drawable.suzuka,
             R.drawable.flag_of_japan
         ),
@@ -214,7 +214,7 @@ object DataSource {
             "Junior",
             "Circuitro de Suzuka",
             "Gran Premio del Pacífico",
-            "27-05-2025",
+            "04-06-2025",
             R.drawable.suzuka,
             R.drawable.flag_of_japan
         ),
@@ -222,7 +222,7 @@ object DataSource {
             "Academy",
             "Circuitro de Winton",
             "Gran Premio del Pacífico",
-            "27-05-2025",
+            "04-06-2025",
             R.drawable.winton,
             R.drawable.flag_of_australia
         ),
@@ -231,7 +231,7 @@ object DataSource {
             "Elite",
             "Circuitro de Interlagos",
             "Gran Premio de las Américas",
-            "05-06-2025",
+            "12-06-2025",
             R.drawable.interlagos,
             R.drawable.flag_of_brazil
         ),
@@ -239,7 +239,7 @@ object DataSource {
             "Junior",
             "Circuitro de Laguna Seca",
             "Gran Premio de las Américas",
-            "04-06-2025",
+            "11-06-2025",
             R.drawable.laguna_seca,
             R.drawable.flag_of_the_united_states
         ),
@@ -247,7 +247,7 @@ object DataSource {
             "Academy",
             "Circuitro de Laguna Seca",
             "Gran Premio de las Américas",
-            "04-06-2025",
+            "11-06-2025",
             R.drawable.laguna_seca,
             R.drawable.flag_of_the_united_states
         ),
@@ -256,7 +256,7 @@ object DataSource {
             "Elite",
             "Circuitro de Catalunya",
             "Gran Premio de Iberia",
-            "12-06-2025",
+            "19-06-2025",
             R.drawable.catalunya,
             R.drawable.bandera_nacional_de_espana
         ),
@@ -264,7 +264,7 @@ object DataSource {
             "Junior",
             "Circuitro de Catalunya",
             "Gran Premio de Iberia",
-            "11-06-2025",
+            "18-06-2025",
             R.drawable.catalunya,
             R.drawable.bandera_nacional_de_espana
         ),
@@ -272,7 +272,7 @@ object DataSource {
             "Academy",
             "Circuitro de Navarra",
             "Gran Premio de Iberia",
-            "11-06-2025",
+            "18-06-2025",
             R.drawable.navarra,
             R.drawable.bandera_nacional_de_espana
         ),

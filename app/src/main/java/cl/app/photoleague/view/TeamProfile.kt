@@ -145,7 +145,7 @@ fun TeamProfile(
                 Box (modifier = Modifier.fillMaxWidth(),
                     contentAlignment = Alignment.Center){
                     Image(painter = painterResource(id = team.logo), contentDescription = "Logo del equipo",
-                        contentScale = ContentScale.Crop, modifier = Modifier.height(100.dp))
+                        contentScale = ContentScale.Fit, modifier = Modifier.height(100.dp))
                 }
 
                 Box (modifier = Modifier.fillMaxWidth(),

@@ -21,9 +21,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import cl.app.photoleague.ui.theme.Bronze
-import cl.app.photoleague.ui.theme.FerrariPrimary
 import cl.app.photoleague.ui.theme.Gold
-import cl.app.photoleague.ui.theme.KickSauberSecondary
 import cl.app.photoleague.ui.theme.Silver
 
 
@@ -38,7 +36,7 @@ fun StandingItem(
         1 -> Gold
         2 -> Silver
         3 -> Bronze
-        else -> FerrariPrimary
+        else -> Color.Red
     }
 
     Card(
@@ -46,7 +44,7 @@ fun StandingItem(
             .fillMaxWidth()
             .padding(vertical = 8.dp, horizontal = 16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = KickSauberSecondary
+            containerColor = Color.Black
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
         shape = MaterialTheme.shapes.medium

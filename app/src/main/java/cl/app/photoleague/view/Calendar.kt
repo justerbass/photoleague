@@ -21,7 +21,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -31,7 +30,6 @@ import cl.app.photoleague.components.CategorySelector
 import cl.app.photoleague.components.PromoButton
 import cl.app.photoleague.components.RaceCard
 import cl.app.photoleague.components.StreamButton
-import cl.app.photoleague.data.DataSource.races
 import cl.app.photoleague.navigation.BottomNavigationBar
 import cl.app.photoleague.viewModel.TeamsViewModel
 

@@ -1,6 +1,7 @@
 package cl.app.photoleague.ui.theme
 
 import androidx.compose.ui.graphics.Color
+import java.util.jar.JarFile
 
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
@@ -10,44 +11,44 @@ val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
-val FerrariPrimary = Color(0xFFDC0000)
-val FerrariSecondary = Color(0xFFFF2800)
+val RedPrimary = Color(0xFFDC0000)
+val RedSecondary = Color.Black
 
-val RedBullPrimary = Color(0xFF0033A0)
-val RedBullSecondary = Color(0xFFDA291C)
+val MurosPrimary = Color(0xFFC8081B)
+val MurosSecondary = Color(0xFF168299)
 
-val McLarenPrimary = Color(0xFFFF8700)
-val McLarenSecondary = Color(0xFFFFB700)
+val SpeedPrimary = Color(0xFFD72E28)
+val SpeedSecondary = Color.Black
 
-val WilliamsPrimary = Color(0xFF041E42)
-val WilliamsSecondary = Color(0xFF0082FA)
+val ZeroPrimary = Color(0xFF1B2D69)
+val ZeroSecondary = Color(0xFF00A0DE)
 
-val AstonMartinPrimary = Color(0xFF006F62)
-val AstonMartinSecondary = Color(0xFF00A499)
+val PacePrimary = Color(0xFF2BBF6B)
+val PaceSecondary = Color(0xFFC1B7B0)
 
-val HaasPrimary = Color(0xFFE10600)
-val HaasSecondary = Color.Black
+val JaspersorPrimary = Color(0xFFC8857F)
+val JaspersorSecondary = Color(0xFF2D6B91)
 
-val RenaultPrimary = Color(0xFF0E88D3)
-val RenaultSecondary = Color(0xFFFFD700)
+val CaracolPrimary = Color(0xFFB9812A)
+val CaracolSecondary = Color(0xFFA3292C)
 
-val MercedesPrimary = Color(0xFF6CD3BF)
-val MercedesSecondary = Color(0xFF1E1E1E)
+val NextPrimary = Color(0xFF093EE7)
+val NextSecondary = Color(0xFFBEDB50)
 
-val RacingBullsPrimary = Color(0xFF1E41FF)
-val RacingBullsSecondary = Color(0xFFFFD700)
+val TorosPrimary = Color(0xFFEB2B2B)
+val TorosSecondary = Color(0xFF9F9896)
 
-val KickSauberPrimary = Color(0xFF00E701)
-val KickSauberSecondary = Color(0xFF0B0E0F)
+val MancosPrimary = Color(0xFF23AAB8)
+val MancosSecondary = Color(0xFF7F7F7F)
 
-val JordanPrimary = Color(0xFFFFD700)
-val JordanSecondary = Color.Black
+val ZorrosPrimary = Color(0xFFFFD700)
+val ZorrosSecondary = Color.Black
 
-val BrawnPrimary = Color(0xFF818F00)
-val BrawnSecondary = Color(0xFFE3E4E5)
+val NovaPrimary = Color(0xFF019B93)
+val NovaSecondary = Color(0xFFBAB911)
 
 val SimufyPrimary = Color(0xFFff5730)
-val SimufySecondary = Color(0xFFe0e0d4)
+val SimufySecondary = Color.Black
 
 val canary = Color(0xFFFFD54F)
 val background = Color(0xFF0B0E0F)
@@ -61,18 +62,18 @@ val instagramColor = Color(0xFF405DE6)
 
 fun getTeamColors(teamName: String): Pair<Color, Color> {
     return when (teamName) {
-        "Ferrari" -> Pair(FerrariPrimary, FerrariSecondary)
-        "Red Bull" -> Pair(RedBullPrimary, RedBullSecondary)
-        "McLaren" -> Pair(McLarenPrimary, McLarenSecondary)
-        "Williams" -> Pair(WilliamsPrimary, WilliamsSecondary)
-        "Aston Martin" -> Pair(AstonMartinPrimary, AstonMartinSecondary)
-        "Haas" -> Pair(HaasPrimary, HaasSecondary)
-        "Renault" -> Pair(RenaultPrimary, RenaultSecondary)
-        "Mercedes" -> Pair(MercedesPrimary, MercedesSecondary)
-        "Racing Bulls" -> Pair(RacingBullsPrimary, RacingBullsSecondary)
-        "Kick Sauber" -> Pair(KickSauberPrimary, KickSauberSecondary)
-        "Jordan" -> Pair(JordanPrimary, JordanSecondary)
-        "Brawn GP" -> Pair(BrawnPrimary, BrawnSecondary)
+        "Red Motors" -> Pair(RedPrimary, RedSecondary)
+        "Muros Lovers" -> Pair(MurosPrimary, MurosSecondary)
+        "No Speed Limit" -> Pair(SpeedPrimary, SpeedSecondary)
+        "Zero Racing" -> Pair(ZeroPrimary, ZeroSecondary)
+        "Team No Pace" -> Pair(PacePrimary, PaceSecondary)
+        "Jaspersor" -> Pair(JaspersorPrimary, JaspersorSecondary)
+        "Caracoles Furiosos" -> Pair(CaracolPrimary, CaracolSecondary)
+        "Next Lap" -> Pair(NextPrimary, NextSecondary)
+        "Toros Racing" -> Pair(TorosPrimary, TorosSecondary)
+        "Mancos" -> Pair(MancosPrimary, MancosSecondary)
+        "Zorros Salvajes" -> Pair(ZorrosPrimary, ZorrosSecondary)
+        "Nova GP" -> Pair(NovaPrimary, NovaSecondary)
         "Simufy Wildcard" -> Pair(SimufyPrimary, SimufySecondary)
         else -> Pair(Color.Gray, Color.DarkGray)
     }
