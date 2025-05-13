@@ -12,117 +12,117 @@ object DataSource {
             "Red Motors",
             "proyectohistoria",
             R.drawable.red_motors,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.red_motors_f1,
+            R.drawable.red_motors_f2,
+            R.drawable.red_motors_f3
         ),
         Teams(
             "RB",
             "Muros Lovers",
             "[PEC] FelipeBau09",
             R.drawable.muros_lovers,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.muros_lovers_f1,
+            R.drawable.muros_lovers_f2,
+            R.drawable.muros_lovers_f3
         ),
         Teams(
             "MCL",
             "No Speed Limit",
             "Maomoga_56",
             R.drawable.no_speed_limit,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.no_speed_limit_f1,
+            R.drawable.no_speed_limit_f2,
+            R.drawable.no_speed_limit_f3
         ),
         Teams(
             "WIL",
             "Zero Racing",
             "Reversemodex (Fer)",
             R.drawable.zero_racing,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.zero_racing_f1,
+            R.drawable.zero_racing_f2,
+            R.drawable.zero_racing_f3
         ),
         Teams(
             "AS",
             "Team No Pace",
             "Lgnzh",
             R.drawable.team_no_pace,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.team_no_pace_f1,
+            R.drawable.team_no_pace_f2,
+            R.drawable.team_no_pace_f3
         ),
         Teams(
             "HAS",
             "Jaspersor",
             "paulaaa_moreno",
             R.drawable.jaspersor,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.jaspersor_f1,
+            R.drawable.jaspersor_f2,
+            R.drawable.jaspersor_f3
         ),
         Teams(
             "REN",
             "Caracoles Furiosos",
             "xGersonG",
             R.drawable.caracoles_furiosos,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.caracoles_furiosos_f1,
+            R.drawable.caracoles_furiosos_f2,
+            R.drawable.caracoles_furiosos_f3
         ),
         Teams(
             "MER",
             "Next Lap",
             "Snowdenesp",
             R.drawable.next_lap,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.next_lap_f1,
+            R.drawable.next_lap_f2,
+            R.drawable.next_lap_f3
         ),
         Teams(
             "RBS",
             "Toros Racing",
             "Proviagus",
             R.drawable.toros_racing,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.toros_racing_f1,
+            R.drawable.toros_racing_f2,
+            R.drawable.toros_racing_f3
         ),
         Teams(
             "KS",
             "Mancos",
             "Christiantmt14",
             R.drawable.mancos,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.mancos_f1,
+            R.drawable.mancos_f2,
+            R.drawable.mancos_f3
         ),
         Teams(
             "JOR",
             "Zorros Salvajes",
             "fjm_mamolas",
             R.drawable.zorros_salvajes,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.zorros_salvajes_f1,
+            R.drawable.zorros_salvajes_f2,
+            R.drawable.zorros_salvajes_f3
         ),
         Teams(
             "BRW",
             "Nova GP",
             "Robb3n23",
             R.drawable.nova_gp,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.nova_gp_f1,
+            R.drawable.nova_gp_f2,
+            R.drawable.nova_gp_f3
         ),
         Teams(
             "SW",
             "Simufy Wildcard",
             "Simufy",
             R.drawable.simufy_wildcard,
-            R.drawable.ferrary_f1,
-            R.drawable.ferrary_f2,
-            R.drawable.ferrary_f3
+            R.drawable.simufy_wildcard_f1,
+            R.drawable.simufy_wildcard_f2,
+            R.drawable.simufy_wildcard_f3
         ),
     )
 

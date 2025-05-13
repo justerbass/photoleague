@@ -8,6 +8,6 @@ class Constants {
         const val END_POINT_F1 = "api/resultados/33"
 
         const val BASE_URL_NEWS = "https://raw.githubusercontent.com/justerbass/noticias/refs/heads/main/"
-        const val NEWS_ENDPOINT = "news.json"
+        const val NEWS_ENDPOINT = "news_S4.json"
     }
 }
